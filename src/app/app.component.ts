@@ -13,6 +13,8 @@ export class AppComponent {
   alt1: string;
   alt2: string;
   alt3: string;
+  total: number;
+
 
   constructor() {
     this.image1 = 'assets/images/dice/side1.png';
@@ -23,8 +25,10 @@ export class AppComponent {
 
     this.image3 = 'assets/images/dice/side3.png';
     this.alt3 = 'side 3';
+
+
   }
-  roll(){
+  roll() {
     const rand1 = 1 + Math.floor( 6 * Math.random());
     this.image1 = `assets/images/dice/side${rand1}.png`;
     this.alt1 = `side ${rand1}`;
@@ -36,6 +40,9 @@ export class AppComponent {
     const rand3 = 1 + Math.floor( 6 * Math.random());
     this.image3 = `assets/images/dice/side${rand3}.png`;
     this.alt3 = `side ${rand3}`;
+    this.total = rand1 + rand2 + rand3;
   }
+
+
 
 }
